@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <style>
+      body{background: linear-gradient(180deg,rgba(23, 173, 232, 1) 0%, rgba(255, 255, 255, 1) 77%, rgba(175, 194, 72, 1) 78%, rgba(237, 221, 83, 1) 100%);
+        font-family: sans-serif;
+        perspective: 1000px;
+      }
+      h1{
+        padding-left: 20px;
+      }
+      h3{
+        padding-left: 20px;
+      }
+      #poster{
+        padding-left: 50%;
+        height:70%;
+        border-right:black solid 8px;
+        transform: rotateY(-20deg);
+      }
+      #output{
+        display:none;
+      }
+    </style>
+    <script>
+      //https://gist.github.com/prof3ssorSt3v3/d7946ea634448c501dd8287cbe3f2c0b
+        let baseURL = 'https://api.themoviedb.org/3/';
+        let configData = null;
+        let baseImageURL = null;
+        let APIKEY = "null"; // Go get your own.
+        
+        let getConfig = function () {
+            let url = "".concat(baseURL, 'configuration?api_key=', APIKEY); 
+            fetch(url)
+            .then((result)=>{
+                return result.json();
+            })
+            .then((data)=>{
+                baseImageURL = data.images.secure_base_url;
+                configData = data.images;
+                console.log('config:', data);
+                console.log('config fetched');
+              //here is where what comes up is stored
+              const search = ["78","51817","178"]
+                runSearch(search[Math.floor(Math.random() * search.length)])
+            })
+            .catch(function(err){
+                alert(err);
+            });
+        }
+        
+        let runSearch = function (keyword) {
+            let url = ''.concat(baseURL, '/tv/', keyword, '?api_key=', APIKEY);
+            fetch(url)
+            .then(result=>result.json())
+            .then((data)=>{
+                //process the returned data
+                document.getElementById('output').innerHTML = JSON.stringify(data, null, 4);
+                //work with results array...
+                document.getElementById("vote_average").innerHTML = data.vote_average;
+                document.getElementById("title").innerHTML = data.original_name;
+                document.getElementById("info").innerHTML = data.last_episode_to_air.season_number + " seasons and " + data.number_of_episodes + " episodes total.";
+                document.getElementById("poster").src = "https://image.tmdb.org/t/p/w500" + data.poster_path;
+
+            })
+        }
+        
+        document.addEventListener('DOMContentLoaded', getConfig);
+    </script>
+  </head>
+  <body>
+    <h1 id="title">Title</h1>
+    <h3 id="info">Tagline</h3>
+    <h3 style="text-align:right;" id="vote_average">6.7</h3>
+    <img id="poster" src="Instagrampost-1a.webp"></img>
+    <div id="output">lol</div>
+  </body>
+</html>

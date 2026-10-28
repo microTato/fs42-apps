@@ -1,0 +1,91 @@
+<html>
+<style>
+body{
+background-color: red;
+font-family:"Gill Sans", sans-serif;
+}
+h1{
+    background-color: lightcoral;  
+    width:99%;
+    position: fixed;
+}
+.scroll-me{
+    overflow-x:hidden;
+    overflow-y:visible;
+    height:95%;
+}
+.feed-item-title a{
+    text-align: end;
+    color:white;
+}
+.feed-title a{
+    text-align: end;
+    color:white;
+}
+img{
+    width:250px;
+    height:auto;
+}
+</style>
+<script>
+    // First, define a helper function.
+function animateScroll(duration, start, end) {
+  var change = end - start;
+  var increment = 20;
+  function easeInOut(currentTime, start, change, duration) {
+    // by Robert Penner
+    currentTime /= duration / 2;
+    if (currentTime < 1) {
+      return change / 2 * currentTime * currentTime + start;
+    }
+    currentTime -= 1;
+    return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
+  }
+  function animate(elapsedTime) {
+    elapsedTime += increment;
+    var position = easeInOut(elapsedTime, start, change, duration);
+    someElement.scrollTop = position;
+    if (elapsedTime < duration) {
+      setTimeout(function() {
+        animate(elapsedTime);
+      }, increment)
+    }
+  }
+  animate(0);
+}
+// Here's our main callback function we passed to the observer
+function scrollLoop() {
+  var duration = 64000 // Or however many milliseconds you want to scroll to last
+  animateScroll(duration,someElement.scrollTop,someElement.scrollHeight);
+setTimeout(function(){
+someElement.scrollTo(0, 0);
+setTimeout(function(){
+scrollLoop();
+},3000);
+}, duration + 3000);
+}
+setTimeout(function(){
+    //do what you need here
+scrollLoop();
+}, 2000);
+</script>
+<body>
+<h1>NEWS 24/7 <small><small>ON FIELDSTATION42</small></small></h1>
+<br><br>
+<div id="someElement" class="scroll-me">
+    <h2>US Politics</h2>
+    <script src="https://rss.bloople.net/?url=https://feeds.bbci.co.uk/news/rss.xml?edition=us&detail=30&limit=2&showtitle=false&type=js"></script>
+    <h2>Hobbies</h2>
+    <script src="https://rss.bloople.net/?url=https://feeds.arstechnica.com/arstechnica/gaming&detail=30&limit=4&showtitle=false&type=js"></script>
+    <script src="https://rss.bloople.net/?url=http://feeds.feedburner.com/nintendolife/latest&detail=40&limit=4&showtitle=false&type=js"></script>
+    <h2>Technology</h2>
+    <script src="https://rss.bloople.net/?url=https://feeds.arstechnica.com/arstechnica/technology-lab&detail=30&limit=4&showtitle=false&type=js"></script>
+    <script src="//rss.bloople.net/?url=https%3A%2F%2Fhnrss.org%2Ffrontpage&limit=4&showtitle=false&type=js"></script>
+    <script src="https://rss.bloople.net/?url=https://feeds.feedburner.com/ign/tech-articles&detail=30&limit=4&showtitle=false&type=js"></script>
+    <script src="https://rss.bloople.net/?url=https://hackaday.com/blog/feed/&detail=30&limit=4&showtitle=false&type=js"></script>
+    <h2>Comedy</h2>
+    <script src="https://rss.bloople.net/?url=https://www.theonion.com/rss&detail=-1&limit=4&showtitle=false&type=js"></script>
+    <script src="https://rss.bloople.net/?url=https://xkcd.com/atom.xml&limit=1&showtitle=false&type=js"></script>
+</div>
+</body>
+</html>
