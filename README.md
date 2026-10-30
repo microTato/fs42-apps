@@ -1,7 +1,7 @@
 # fs42-apps
 
 ![made with plain JS, HTML, CSS](https://img.shields.io/badge/made_with_-_plain_JS%2C_HTML%2C_CSS-yellow)
-![GitHub License](https://img.shields.io/github/license/microtato/fs42-apps)
+![GitHub License](https://img.shields.io/github/license/microTato/fs42-apps)
 
 A collection of HTML files made by me for use with FieldStation42.
 
