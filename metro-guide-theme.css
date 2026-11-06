@@ -1,0 +1,82 @@
+//this file is licenced under MPL 2.0 cause its copied off of the MPL licenced 2000s theme from the original
+//read the license at https://www.mozilla.org/en-US/MPL/2.0/
+//all i did was remove the border-radius things and changed some colors
+:root {
+
+  --layout-mode: "grid";
+  --music-autoload: false;
+
+  --header-position: bottom;
+  --channel-position: before;
+  --continued-indicator: " ▶";
+  --offair-text: "No Info";
+  --header-text: "FS42 Guide";
+
+  /* core — medium navy blue */
+  --bg-color: #2d89ef;
+  --text-color: #ffffff;
+  --header-bg: #2b5797;
+  --header-text-color: #ffffff;
+
+  /* grid chrome */
+  --time-heading-color: #ffffff;
+  --channel-number-color: #ffffff;
+  --channel-name-color: #ffffff;
+  --show-title-color: #ffffff;
+  --row-divider-color: #0e2a60;
+
+  /* top panel */
+  --top-panel-height: 42%;
+  --video-side: left;
+  --video-width: auto;
+  --video-aspect-ratio: 16/9;
+  --video-panel-bg: #1a3a78;
+  --text-panel-bg: #1a3a78;
+  --text-panel-color: #ffffff;
+  --text-panel-title-color: #ffdd44;
+  --text-carousel-speed: 10;
+
+  /* grid header */
+  --grid-header-bg: #0a1e50;
+  --time-slot-bg: #2a4a99;
+  --time-slot-radius: 0em;
+
+  /* channel pill — red, rounded */
+  --grid-channel-bg: #bb1122;
+  --grid-channel-width: 5.25em;
+  --channel-pill-radius: 0em;
+  --channel-pill-margin-v: 4px;
+  --channel-pill-margin-h: 4px;
+  --channel-block-border: transparent;
+  --channel-block-shadow: transparent;
+
+  /* grid rows */
+  --grid-row-height: 3.0em;
+  --grid-row-odd-bg: #1a3a78;
+  --grid-row-even-bg: #162e65;
+
+  /* program blocks — rounded, blue */
+  --program-block-radius: 0em;
+  --program-block-bg: #1d1d1d;
+  --program-block-border: #1d1d1d;
+  --program-block-even-bg: #1d1d1d;
+  --program-block-even-border: #1d1d1d;
+  --program-block-shadow: #0a1e50;
+  --program-current-bg: #2b5797;
+  --program-current-border: #2b5797;
+  --program-current-color: #ffffff;
+
+  /* type */
+  --font-family: 'Arial', 'Helvetica Neue', sans-serif;
+  --font-size: 1.3rem;
+  --h-padding: 1.5%;
+  --v-padding: 1.5%;
+
+  /* scroll */
+  --scroll-pause: 4s;
+  --scroll-speed: 0.8;
+
+  /* audio */
+  --music-volume: 0.4;
+}
+
