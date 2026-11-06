@@ -1,6 +1,6 @@
-//this file is licenced under MPL 2.0 cause its copied off of the MPL licenced 2000s theme from the original
-//read the license at https://www.mozilla.org/en-US/MPL/2.0/
-//all i did was remove the border-radius things and changed some colors
+/*this file is licenced under MPL 2.0 cause its copied off of the MPL licenced 2000s theme from the original
+read the license at https://www.mozilla.org/en-US/MPL/2.0/
+all i did was remove the border-radius things and changed some colors */
 :root {
 
   --layout-mode: "grid";
