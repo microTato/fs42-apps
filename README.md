@@ -19,5 +19,7 @@ A collection of HTML files made by me for use with FieldStation42.
 - metro-guide-theme.css
   ![Picture showing the metro guide theme](https://mcj01.neocities.org/metroguidethemefs42.png)
   - Theme for custom guides inspired by the [Metro design language](https://en.wikipedia.org/wiki/Metro_(design_language)).
- 
+- skyguide
+  - Modified custom guide made to look like Sky's channel guide from the 2000s (or, more accurately, [cheezitburger's psd based on sky's channel guide from the 2000s](https://www.deviantart.com/cheez-it-burger/art/Sky-EPG-Template-1998---2009-1153685467))
+
 *A free TMDB API key is required
